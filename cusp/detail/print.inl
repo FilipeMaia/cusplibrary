@@ -36,7 +36,7 @@ void print(const Printable& p, Stream& s, cusp::coo_format)
   {
     s << " " << std::setw(14) << p.row_indices[n];
     s << " " << std::setw(14) << p.column_indices[n];
-    s << " " << std::setw(14) << p.values[n] << "\n";
+    s << " " << std::setw(14) << (typename Printable::value_type) p.values[n] << "\n";
   }
 }
 
@@ -70,7 +70,7 @@ void print(const Printable& p, Stream& s, cusp::array1d_format)
   s << "array1d <" << p.size() << ">\n";
 
   for(size_t i = 0; i < p.size(); i++)
-    s << std::setw(14) << p[i] << "\n";
+    s << std::setw(14) << (typename Printable::value_type) p[i] << "\n";
 }
 
 } // end namespace detail
