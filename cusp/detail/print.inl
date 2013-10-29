@@ -57,7 +57,7 @@ void print(const Printable& p, Stream& s, cusp::array2d_format)
   {
     for(size_t j = 0; j < p.num_cols; j++)
     {
-      s << std::setw(14) << p(i,j);
+      s << std::setw(14) << (typename Printable::value_type) p(i,j);
     }
 
     s << "\n";
